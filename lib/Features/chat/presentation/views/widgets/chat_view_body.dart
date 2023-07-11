@@ -18,7 +18,7 @@ class ChatViewBody extends StatelessWidget {
           SearchTextFaild(),
           SizedBox(height: 16),
           SizedBox(height: 100, child: StatusListView()),
-          Expanded(child: ChatsListView()),
+          Expanded(child: ChatsListView())
         ],
       ),
     );

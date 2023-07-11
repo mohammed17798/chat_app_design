@@ -1,19 +1,17 @@
 class ChatModel {
   final String userName;
-
   final String lastMessage;
   final String date;
-  final String image;
-
-  final ChatState state;
+  final String profileImage;
+  final UserChatState state;
 
   ChatModel({
     required this.userName,
     required this.lastMessage,
     required this.date,
-    required this.image,
+    required this.profileImage,
     required this.state,
   });
 }
 
-enum ChatState { onlin, offline, busy }
+enum UserChatState { onlin, offline, busy }

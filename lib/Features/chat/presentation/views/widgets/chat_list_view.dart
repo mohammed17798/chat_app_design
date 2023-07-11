@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/Features/chat/presentation/view_model/cubit/chat_cubit/chat_cubit.dart';
 import 'package:test_flutter/Features/chat/presentation/views/widgets/chat_item.dart';
 
 class ChatsListView extends StatelessWidget {
@@ -9,9 +10,10 @@ class ChatsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 20,
+      itemCount: ChatCubit.get(context).chatsList.length,
       itemBuilder: (context, index) {
-        return const ChatItem();
+        var message = ChatCubit.get(context).chatsList[index];
+        return ChatItem(message: message);
       },
     );
   }

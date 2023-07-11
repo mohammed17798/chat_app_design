@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/Features/chat/data/chat_model.dart';
+import 'package:test_flutter/Features/chat/presentation/view_model/cubit/chat_cubit/chat_cubit.dart';
 import 'package:test_flutter/Features/chat/presentation/views/widgets/profile_circle_image.dart';
 
 class StatusItem extends StatelessWidget {
   const StatusItem({
     super.key,
+    required this.message,
   });
 
+  final ChatModel message;
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        /// TODO: change color when user onlin or offline
         ProfileCircleImage(
-          stateColor: Colors.green,
+          message: message,
+          stateColor: ChatCubit.get(context).switchColor(message.state),
         ),
-
-        SizedBox(height: 5),
-        Text('Kareem'),
+        const SizedBox(height: 5),
+        Text(message.userName),
       ],
     );
   }

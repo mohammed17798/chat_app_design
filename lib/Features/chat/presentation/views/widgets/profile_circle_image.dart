@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/app_images.dart';
+import 'package:test_flutter/Features/chat/data/chat_model.dart';
 
 class ProfileCircleImage extends StatelessWidget {
   const ProfileCircleImage({
     super.key,
     required this.stateColor,
+    required this.message,
   });
-
+  final ChatModel message;
   final Color stateColor;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 30,
           backgroundImage: AssetImage(
-            Assets.imagesProfile,
+            message.profileImage,
           ),
         ),
         Positioned(
