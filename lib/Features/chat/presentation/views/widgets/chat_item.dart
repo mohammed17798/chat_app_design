@@ -10,7 +10,7 @@ class ChatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: const ProfileCircleImage(),
+      leading: const ProfileCircleImage(stateColor: Colors.green),
       title: Text(
         'Kareem Ahmed',
         style: TextStyle(

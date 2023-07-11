@@ -10,7 +10,11 @@ class StatusItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        ProfileCircleImage(),
+        /// TODO: change color when user onlin or offline
+        ProfileCircleImage(
+          stateColor: Colors.green,
+        ),
+
         SizedBox(height: 5),
         Text('Kareem'),
       ],

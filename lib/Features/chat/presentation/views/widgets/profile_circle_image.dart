@@ -4,13 +4,15 @@ import 'package:test_flutter/app_images.dart';
 class ProfileCircleImage extends StatelessWidget {
   const ProfileCircleImage({
     super.key,
+    required this.stateColor,
   });
 
+  final Color stateColor;
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       children: [
-        CircleAvatar(
+        const CircleAvatar(
           radius: 30,
           backgroundImage: AssetImage(
             Assets.imagesProfile,
@@ -21,7 +23,7 @@ class ProfileCircleImage extends StatelessWidget {
             right: 4,
             child: CircleAvatar(
               radius: 6,
-              backgroundColor: Colors.green,
+              backgroundColor: stateColor,
             ))
       ],
     );
